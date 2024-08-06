@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package topics;
+
+import "google/protobuf/descriptor.proto";
+
+option go_package = "github.com/isfk/protoc-gen-go-topics/proto/topics;topics";
+
+enum Topic {
+  TOPIC_UNSPECIFIED = 0;
+  TOPIC_TRUE = 1;
+  TOPIC_FALSE = 2;
+}
+
+extend google.protobuf.FileOptions {
+  Topic file_topic = 80808;
+}
+
+extend google.protobuf.MethodOptions {
+  Topic method_topic = 80808;
+}
