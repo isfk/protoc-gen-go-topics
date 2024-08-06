@@ -7,10 +7,15 @@
 ### Buf
 
 ```yaml
+# buf.yaml
 plugins:
   - local: protoc-gen-go-topics
     out: gen/go
     opt: paths=source_relative
+
+# buf.gen.yaml
+deps:
+  - buf.build/isfk/topics
 ```
 
 ## example
