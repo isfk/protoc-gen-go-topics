@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package example;
+
+import "google/protobuf/descriptor.proto";
+import "topics/topics.proto";
+
+option (topics.file_topic) = TOPIC_TRUE;
+option go_package = "github.com/isfk/protoc-gen-go-topics/example/proto/example;example";
+
+service ExampleService {
+  rpc ExampleInfo(ExampleInfoRequest) returns (ExampleInfoResponse) {
+    option (topics.method_topic) = TOPIC_TRUE;
+  }
+
+  rpc Example1Info(Example1InfoRequest) returns (Example1InfoResponse) {}
+}
+
+message ExampleInfoRequest {}
+
+message ExampleInfoResponse {
+  string message = 1;
+}
+
+message Example1InfoRequest {}
+
+message Example1InfoResponse {
+  string message = 1;
+}
