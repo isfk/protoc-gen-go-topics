@@ -4,5 +4,7 @@
 package example
 
 const (
-	ExampleService_ExampleInfo_FullTopicName = "example.ExampleService.ExampleInfo"
+	ExampleService_ServerName                 = "ExampleServiceServer"
+	ExampleService_ExampleInfo_FullTopicName  = "example.ExampleService.ExampleInfo"
+	ExampleService_ExampleInfo2_FullTopicName = "example.ExampleService.ExampleInfo2"
 )

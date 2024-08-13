@@ -35,6 +35,7 @@ func generateTopics(plugin *protogen.Plugin, file *protogen.File) {
 		g.P()
 		g.P("const (")
 		for _, service := range file.Services {
+			g.P(service.Desc.Name(), "_ServerName = \"", service.Desc.Name(), "Server\"")
 			for _, method := range service.Methods {
 				mops := proto.GetExtension(method.Desc.Options(), topics.E_MethodTopic).(topics.Topic)
 				if mops == topics.Topic_TOPIC_TRUE {
@@ -42,6 +43,7 @@ func generateTopics(plugin *protogen.Plugin, file *protogen.File) {
 					g.P(topic)
 				}
 			}
+			g.P()
 		}
 		g.P(")")
 	}

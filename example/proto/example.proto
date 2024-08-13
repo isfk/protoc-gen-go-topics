@@ -13,7 +13,11 @@ service ExampleService {
     option (topics.method_topic) = TOPIC_TRUE;
   }
 
-  rpc Example1Info(Example1InfoRequest) returns (Example1InfoResponse) {}
+  rpc ExampleInfo1(ExampleInfo1Request) returns (ExampleInfo1Response) {}
+  
+  rpc ExampleInfo2(ExampleInfo2Request) returns (ExampleInfo2Response) {
+    option (topics.method_topic) = TOPIC_TRUE;
+  }
 }
 
 message ExampleInfoRequest {}
@@ -22,8 +26,14 @@ message ExampleInfoResponse {
   string message = 1;
 }
 
-message Example1InfoRequest {}
+message ExampleInfo1Request {}
 
-message Example1InfoResponse {
+message ExampleInfo1Response {
+  string message = 1;
+}
+
+message ExampleInfo2Request {}
+
+message ExampleInfo2Response {
   string message = 1;
 }
